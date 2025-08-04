@@ -3,58 +3,54 @@
     <div class="bg-white min-h-[600px] max-h-[660] border border-gray-200 rounded-md shadow-xl overflow-y-auto scroll-thin">
         {{-- HEADER --}}
         <div class="w-full bg-gray-800 rounded-t-md flex">
-            <div class="w-full">
-                <h1 class="text-white font-bold text-xl px-2 py-1">Employees</h1>
+            <div class="w-full flex gap-1">
+                <h1 class="text-white font-bold text-xl px-2 py-2">Services</h1>
+                <a href="{{ route('services.create') }}"
+                    class="text-black text-sm flex gap-1 mx-1 my-2 px-4 py-2 rounded-md bg-gray-100 shadow hover:bg-zinc-500 hover:text-gray-900 transition ease-in-out duration-200">
+                    @include('icons.plus')
+                </a>
             </div>
             <div class="w-full flex justify-end items-center">
-                <a href="{{ route('services.create') }}"
-                     @click.prevent="showAddServiceModal = true"
-                    class="text-white text-sm flex gap-1 mx-1 my-2 px-4 py-1 rounded-md bg-gray-600 shadow hover:bg-white hover:text-gray-900 transition ease-in-out duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-user-round-plus-icon lucide-user-round-plus">
-                        <path d="M2 21a8 8 0 0 1 13.292-6" />
-                        <circle cx="10" cy="8" r="5" />
-                        <path d="M19 16v6" />
-                        <path d="M22 19h-6" />
-                    </svg>
-                    New</a>
-
+                <a href="#"
+                class="bg-gray-100 text-gray-900 p-2 rounded-md mx-3 text-sm flex gap-1 hover:bg-zinc-500 hover:text-white transition ease-in-out duration-200">
+                    {{-- ICON --}}
+                    @include('icons.eye')Categories
+                </a>
             </div>
         </div>
         {{-- TABLE --}}
         <div class="mx-2 my-1 border-b rounden-md py-3">
             <div class="w-full flex">
                 <div class="w-[300px]">
-                    <h3 class="font-semibold">Service name</h3>
+                    <h3 class="font-semibold pl-2">Service name</h3>
                 </div>
                 <div class="w-[300px]">
-                    <h3 class="font-semibold">Category</h3>
+                    <h3 class="font-semibold pl-2">Category</h3>
                 </div>
                 <div class="w-[300px]">
-                    <h3 class="font-semibold">Price</h3>
+                    <h3 class="font-semibold pl-2">Price</h3>
                 </div>
                 <div class="w-[130px] text-center">
-                    <h3 class="font-semibold">Action</h3>
+                    <h3 class="font-semibold pl-2">Action</h3>
                 </div>
             </div>
         </div>
         @foreach ($services as $service)
-            <div class="mx-2 my-1 py-2 rounden-md hover:bg-gray-200 transition ease-in-out">
+            <div class="mx-2 my-1 py-2 rounden-md hover:bg-gray-200 rounded-md transition ease-in-out">
                 <div class="w-full flex">
                     <div class="w-[300px]">
-                        <h3 class="text-gray-500 text-sm">{{ $service->name }}</h3>
+                        <h3 class="text-gray-500 text-sm pl-2">{{ $service->name }}</h3>
                     </div>
                     <div class="w-[300px]">
-                        <h3 class="text-gray-500 text-sm">{{ $service->category }}</h3>
+                        <h3 class="text-gray-500 text-sm pl-2">{{ $service->category }}</h3>
                     </div>
                     <div class="w-[300px]">
-                        <h3 class="text-sm text-green-600">{{ '₱ ' . number_format($service->amount) }}</h3>
+                        <h3 class="text-sm text-green-600 pl-2">{{ '₱ ' . number_format($service->amount) }}</h3>
                     </div>
                     <div class="w-[130px] text-center flex justify-center items-center gap-1">
                         {{-- ACTION BUTTON --}}
                         <a href="#"
-                            class="text-blue-600 hover:text-blue-300 bg-gray-50 border border-gray-200 p-1 rounded-md shadow">
+                            class="pl-2 text-blue-600 hover:text-blue-300 bg-gray-50 border border-gray-200 p-1 rounded-md shadow">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
                                 <path
                                     d="m5.433 13.917 1.262-3.155A4 4 0 0 1 7.58 9.42l6.92-6.918a2.121 2.121 0 0 1 3 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 0 1-.65-.65Z" />

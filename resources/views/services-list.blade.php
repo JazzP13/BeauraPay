@@ -6,7 +6,7 @@
             <div class="w-full">
                 <h1 class="text-white font-bold text-xl px-2 py-1">Employees</h1>
             </div>
-            <div class="w-full flex justify-end items-center">
+            <div class="w-full flex justify-end items-center"
                 @click="open = true"
                 x-data="{ open: false }"
                 x-on:click="$dispatch('open-modal')">

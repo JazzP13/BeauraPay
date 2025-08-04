@@ -19,4 +19,5 @@ Route::controller(EmplyeeController::class)->group(function () {
 
 Route::controller(ServiceController::class)->group(function(){
     Route::get('/services', 'index')->name('services.index');
+    Route::get('/services/create', 'create')->name('services.create');// VIEW CREATE NEW SERVICE FORM
 });

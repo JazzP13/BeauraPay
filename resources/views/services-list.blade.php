@@ -6,11 +6,9 @@
             <div class="w-full">
                 <h1 class="text-white font-bold text-xl px-2 py-1">Employees</h1>
             </div>
-            <div class="w-full flex justify-end items-center"
-                @click="open = true"
-                x-data="{ open: false }"
-                x-on:click="$dispatch('open-modal')">
-                <a href="#"
+            <div class="w-full flex justify-end items-center">
+                <a href="{{ route('services.create') }}"
+                     @click.prevent="showAddServiceModal = true"
                     class="text-white text-sm flex gap-1 mx-1 my-2 px-4 py-1 rounded-md bg-gray-600 shadow hover:bg-white hover:text-gray-900 transition ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -76,54 +74,5 @@
                 </div>
             </div>
         @endforeach
-    </div>
-
-    <!-- Trigger Button -->
-    <button @click="open = true" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" x-data="{ open: false }"
-        x-on:click="$dispatch('open-modal')">
-        Open Modal
-    </button>
-
-    <!-- Modal -->
-    <div x-data="{ open: false }" x-on:open-modal.window="open = true" x-show="open" x-transition.opacity
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-
-        <!-- Modal Box -->
-        <div @click.away="open = false" class="bg-white p-6 rounded-lg shadow-lg w-96" x-transition.scale>
-            <h2 class="text-xl font-semibold mb-4">Interactive Modal</h2>
-
-            <!-- Modal Content -->
-            <form @submit.prevent="alert('Form submitted!'); open = false;">
-                <label class="block mb-2">
-                    Name:
-                    <input type="text" class="w-full border rounded px-2 py-1 mt-1" required>
-                </label>
-
-                <div class="flex justify-end gap-2 mt-4">
-                    <button type="button" @click="open = false" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    {{-- FORM --}}
-    <div class="w-[500px]">
-        <form action="">
-            <input type="text" name="service_name" placeholder="Service name..."
-                class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            <input type="text" name="category" placeholder="Service categotgy..."
-                class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            <input type="text" name="ammount" placeholder="Pice..."
-                class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring-1 focus:ring-blue-500">
-            <button type="submit"
-                class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition ease-in-out duration-200">
-                Add Service
-            </button>
-        </form>
     </div>
 @endsection

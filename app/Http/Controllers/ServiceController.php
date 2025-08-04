@@ -15,4 +15,9 @@ class ServiceController extends Controller
             'services' => Service::all()
         ]);
     }
+
+    public function create()
+    {
+        return view('forms.add-service');
+    }
 }

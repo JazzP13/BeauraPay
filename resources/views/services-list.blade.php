@@ -3,16 +3,17 @@
     <div class="bg-white min-h-[600px] max-h-[660] border border-gray-200 rounded-md shadow-xl overflow-y-auto scroll-thin">
         {{-- HEADER --}}
         <div class="w-full bg-gray-800 rounded-t-md flex">
-            <div class="w-full flex gap-1">
+            <div class="w-full flex gap-2">
                 <h1 class="text-white font-bold text-xl px-2 py-2">Services</h1>
                 <a href="{{ route('services.create') }}"
-                    class="text-black text-sm flex gap-1 mx-1 my-2 px-4 py-2 rounded-md bg-gray-100 shadow hover:bg-zinc-500 hover:text-gray-900 transition ease-in-out duration-200">
-                    @include('icons.plus')
+                    class="text-white flex gap-1 items-center font-light text-sm border rounded-md my-2 px-2 her:bg-gray-100 hover:bg-gray-100 hover:text-gray-900 transition ease-in-out duration-200">
+                    {{-- ICON --}}
+                    @include('icons.plus') <p class="pr-1">Add</p>
                 </a>
             </div>
             <div class="w-full flex justify-end items-center">
-                <a href="#"
-                class="bg-gray-100 text-gray-900 p-2 rounded-md mx-3 text-sm flex gap-1 hover:bg-zinc-500 hover:text-white transition ease-in-out duration-200">
+                <a href="{{ route('categories.index') }}"
+                class="bg-gray-100 text-gray-900 px-2 py-1 rounded-md mx-3 text-sm flex gap-1 hover:bg-zinc-500 hover:text-white transition ease-in-out duration-200">
                     {{-- ICON --}}
                     @include('icons.eye')Categories
                 </a>

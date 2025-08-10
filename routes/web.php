@@ -33,4 +33,5 @@ Route::controller(BillingController::class)->group(function(){
 
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/categries', 'index')->name('categories.index');
+    Route::get('/categories/create', 'create')->name('categories.create'); // VIEW CREATE NEW CATEGORY FORM
 });

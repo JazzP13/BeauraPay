@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>BeauraPay</title>
     @vite('resources/css/app.css', 'resources/js/app.js')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -47,6 +48,16 @@
                             <circle cx="12" cy="12" r="2" />
                         </svg>
                         Billing</a>
+                    <a href="{{ route('billing.index') }}"
+                        class="px-3 py-2 rounded hover:bg-gray-900 hover:text-white transition flex gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-history-icon lucide-history">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                            <path d="M3 3v5h5" />
+                            <path d="M12 7v5l4 2" />
+                        </svg>
+                        Billing History</a>
                     <a href="/employees"
                         class="px-3 py-2 rounded hover:bg-gray-900 hover:text-white transition flex gap-1 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -103,7 +114,7 @@
             </div>
 
             <!-- Main Content -->
-            <main class="flex-grow p-2 overflow-y-auto scroll-thin">
+            <main class="flex-grow p-2 overflow-y-auto scroll-thin bg-gray-100">
                 @yield('content')
             </main>
         </div>

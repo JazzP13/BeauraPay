@@ -34,3 +34,8 @@ font-family: 'Poppins', sans-serif;
 .scroll-thin::-webkit-scrollbar-track {
     background-color: rgba(200, 200, 200, 0.2);
 }
+
+.table_head {
+    background-color: #154D71;
+    color: white;
+}

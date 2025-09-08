@@ -6,6 +6,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TemporaryBillingController;
 use App\Models\Category;
 
 Route::get('/', function () {
@@ -28,10 +29,16 @@ Route::controller(ServiceController::class)->group(function(){
 
 Route::controller(BillingController::class)->group(function(){
     Route::get('/billing', 'index')->name('billing.index');
+    Route::post('billing', 'store')->name('billing.store');
 });
 
+Route::controller(TemporaryBillingController::class)->group(function(){
+    Route::post('/temporary-billing', 'toTemporaryTable')->name('temporaryBilling.store'); // SAVE TO TEMPORARY BILLING TABLE
+    Route::delete('/temporary-billing/{id}', 'destroy')->name('temporaryBilling.destroy'); // DELETE SPECIFIC RECORDS IN TEMPORARY BILLING TABLE
+});
 
 Route::controller(CategoryController::class)->group(function(){
     Route::get('/categries', 'index')->name('categories.index');
     Route::get('/categories/create', 'create')->name('categories.create'); // VIEW CREATE NEW CATEGORY FORM
+
 });

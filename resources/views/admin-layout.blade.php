@@ -48,7 +48,7 @@
                             <circle cx="12" cy="12" r="2" />
                         </svg>
                         Billing</a>
-                    <a href="{{ route('billing.index') }}"
+                    <a href="{{ route('billing.history') }}"
                         class="px-3 py-2 rounded hover:bg-gray-900 hover:text-white transition flex gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

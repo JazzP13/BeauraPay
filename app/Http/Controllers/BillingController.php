@@ -62,4 +62,10 @@ class BillingController extends Controller
             return redirect()->route('billing.index')->with('success', 'Billing information saved successfully.');
         }
     }
+
+    public function billingHistory()
+    {
+        $billingHistories = BillingHistory::orderBy('created_at', 'desc')->get();
+        return view('billing-history', compact('billingHistories'));
+    }
 }

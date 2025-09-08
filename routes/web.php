@@ -30,6 +30,8 @@ Route::controller(ServiceController::class)->group(function(){
 Route::controller(BillingController::class)->group(function(){
     Route::get('/billing', 'index')->name('billing.index');
     Route::post('billing', 'store')->name('billing.store');
+
+    Route::get('/billing-history', 'billingHistory')->name('billing.history');
 });
 
 Route::controller(TemporaryBillingController::class)->group(function(){

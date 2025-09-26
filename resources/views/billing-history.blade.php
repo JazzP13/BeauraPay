@@ -40,10 +40,10 @@ $details = '   '
                     <p>{{ $billing->number_of_services }}</p>
                 </div>
                 <div class="w-[180px] font-light text-center">
-                    <p class=" italic text-green-400">{{ '₱ ' . number_format($billing->total_amount) }}</p>
+                    <p class=" italic text-blue-700">{{ '₱ ' . number_format($billing->total_amount) }}</p>
                 </div>
                 <div class="w-[130px] font-light flex justify-center items-center">
-                    <a href="#"
+                    <a href="{{ route('billing.history.details', $billing->id) }}"
                     class="text-blue-500 py-1 px-3 border rounded hover:text-white hover:bg-gray-800 transition ease-in-out duration-200 flex">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

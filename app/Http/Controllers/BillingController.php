@@ -68,4 +68,11 @@ class BillingController extends Controller
         $billingHistories = BillingHistory::orderBy('created_at', 'desc')->get();
         return view('billing-history', compact('billingHistories'));
     }
+
+    public function showDetails($id)
+    {
+        $billingHistory = BillingHistory::with('details')->findOrFail($id);
+        return view('history-details', compact('billingHistory'));
+    }
+
 }

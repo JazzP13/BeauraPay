@@ -32,6 +32,7 @@ Route::controller(BillingController::class)->group(function(){
     Route::post('billing', 'store')->name('billing.store');
 
     Route::get('/billing-history', 'billingHistory')->name('billing.history');
+    Route::get('/billing-history/details/{id}', 'showDetails')->name('billing.history.details');
 });
 
 Route::controller(TemporaryBillingController::class)->group(function(){

@@ -72,7 +72,8 @@ class BillingController extends Controller
     public function showDetails($id)
     {
         $billingHistory = BillingHistory::with('details')->findOrFail($id);
-        return view('history-details', compact('billingHistory'));
+        $totalBill = $billingHistory->total_amount;
+        return view('history-details', compact('billingHistory', 'totalBill'));
     }
 
 }

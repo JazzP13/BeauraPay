@@ -4,7 +4,7 @@
         {{-- HEADER --}}
         <div class="w-full bg-blue-800 text-white rounded-t-md px-3 py-2 mb-3 flex justify-between">
             <h2 class="font-semibold text-lg">Billing Details</h2>
-            <a href=""
+            <a href="{{ route('billing.history') }}"
                 class="font-bold text-blue-700 bg-white rounded p-1 flex justify-center items-center">@include('icons.x')</a>
         </div>
         {{-- DETAILS --}}
@@ -58,6 +58,17 @@
                     @empty
                         <p class="text-sm px-4 py-2 border-b text-gray-500">No services found</p>
                     @endforelse
+                </div>
+            </div>
+            <div class="w-full flex">
+                <div class="bg-gray-100">
+                    <p class="font-bold text-md px-3 py-2 w-[200px]">Total Bill:</p>
+                </div>
+                <div class="w-full bg-white">
+                    <p class="text-xl px-4 py-2 border-b font-bold text-blue-500">
+                        ₱
+                    {{ $totalBill }}
+                    </p>
                 </div>
             </div>
         </div>
